@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <title>Login</title>
   <link rel="stylesheet" href="styles.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+  <!-- Modern Fixed Navigation -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="instructions.html">Contact</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
     </ul>
   </nav>
-  
+
+  <!-- Centered Login Form -->
   <div class="login-container">
-    <h2>LOGIN</h2>
+    <h2>Login</h2>
     <form id="loginForm">
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
@@ -31,20 +34,11 @@
         <option value="fr">French</option>
       </select>
 
-      <button type="submit">SUBMIT</button>
-      <p id="error-msg" style="color: red; margin-top: 10px;"></p>
+      <button type="submit">Submit</button>
+      <p id="error-msg" class="error-message"></p>
     </form>
   </div>
 
   <script src="script.js"></script>
-  <!-- Navigation Bar -->
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="instructions.html">Instructions</a></li>
-  </ul>
-</nav>
-
 </body>
 </html>
