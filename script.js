@@ -11,8 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
   if (email === validEmail && password === validPassword) {
     errorMsg.style.color = "green";
     errorMsg.textContent = "Login successful!";
-    // Optional: hide form after login
-    // document.getElementById("loginForm").style.display = "none";
+
   } else {
     errorMsg.style.color = "red";
     errorMsg.textContent = "Invalid email or password.";
