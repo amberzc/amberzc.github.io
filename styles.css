@@ -49,6 +49,13 @@ nav a:hover {
   color: #ffe36f;
 }
 
+/* LOGO IN NAV */
+.nav-logo {
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 /* LOGIN CONTAINER */
 .login-container {
   background-color: white;
