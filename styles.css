@@ -11,13 +11,13 @@ body {
   background: linear-gradient(to bottom right, #f4f8ff, #eaf1fb);
   color: #333;
   line-height: 1.6;
-  padding-top: 90px; /* better fit for a smaller header */
+  padding-top: 90px; /* adjust for header */
 }
 
 /* ======= HEADER WITH LOGO AND NAV ======= */
 .site-header {
   background-color: #244b8f;
-  padding: 10px 30px;  /* Slimmer header */
+  padding: 10px 30px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -33,9 +33,8 @@ body {
   margin: 0 auto;
 }
 
-/* Logo Adjustments */
 .logo img {
-  height: 45px; /* refined for Sable Systems-like size */
+  height: 45px;
   margin-right: 20px;
   max-width: 150px;
   width: auto;
@@ -58,6 +57,32 @@ body {
 
 .main-nav ul li a:hover {
   color: #ffe36f;
+}
+
+/* FULL WIDTH CONTENT CONTAINERS */
+.about-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.about-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-container ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.about-container li {
+  margin-bottom: 8px;
 }
 
 /* LOGIN CONTAINER */
@@ -133,11 +158,11 @@ button:hover {
   }
 
   .logo img {
-    height: 40px; /* smaller for mobile */
+    height: 40px;
     margin-bottom: 10px;
   }
 
-  .login-container {
+  .login-container, .about-container {
     width: 90%;
     padding: 25px;
   }
