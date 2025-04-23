@@ -11,11 +11,11 @@ body {
   background: linear-gradient(to bottom right, #f4f8ff, #eaf1fb);
   color: #333;
   line-height: 1.6;
-  padding-top: 100px; /* larger top padding for bigger nav */
+  padding-top: 120px; /* adjust for header height */
 }
 
-/* ======= NAVIGATION WITH LOGO ======= */
-.main-nav {
+/* ======= HEADER WITH LOGO AND NAV ======= */
+.site-header {
   background-color: #244b8f;
   padding: 15px 40px;
   position: fixed;
@@ -25,7 +25,7 @@ body {
   z-index: 1000;
 }
 
-.nav-container {
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,23 +33,19 @@ body {
   margin: 0 auto;
 }
 
-.nav-brand {
+.logo img {
+  height: 80px; /* larger logo */
+  margin-right: 30px;
+}
+
+/* NAVIGATION */
+.main-nav ul {
   display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.big-logo {
-  height: 60px; /* adjust to your preferred size */
-}
-
-.nav-links {
   list-style: none;
-  display: flex;
   gap: 30px;
 }
 
-.nav-links li a {
+.main-nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -57,7 +53,7 @@ body {
   transition: color 0.3s;
 }
 
-.nav-links li a:hover {
+.main-nav ul li a:hover {
   color: #ffe36f;
 }
 
@@ -121,19 +117,20 @@ button:hover {
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-  .nav-container {
+  .header-container {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .nav-links {
+  .main-nav ul {
     flex-direction: column;
     gap: 15px;
     margin-top: 10px;
   }
 
-  .big-logo {
-    height: 40px;
+  .logo img {
+    height: 50px;
+    margin-bottom: 10px;
   }
 
   .login-container {
