@@ -11,13 +11,13 @@ body {
   background: linear-gradient(to bottom right, #f4f8ff, #eaf1fb);
   color: #333;
   line-height: 1.6;
-  padding-top: 120px; /* adjust for header height */
+  padding-top: 100px; /* slightly smaller for better fit */
 }
 
 /* ======= HEADER WITH LOGO AND NAV ======= */
 .site-header {
   background-color: #244b8f;
-  padding: 15px 40px;
+  padding: 10px 40px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -33,9 +33,12 @@ body {
   margin: 0 auto;
 }
 
+/* Logo Adjustments */
 .logo img {
-  height: 80px; /* larger logo */
-  margin-right: 30px;
+  height: 60px; /* smaller, more balanced */
+  margin-right: 20px;
+  max-width: 200px; /* cap max width */
+  width: auto;
 }
 
 /* NAVIGATION */
@@ -65,6 +68,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   max-width: 350px;
   margin: 0 auto;
+  margin-top: 40px;
 }
 
 .login-container h2 {
