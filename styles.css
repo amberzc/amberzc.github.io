@@ -11,13 +11,13 @@ body {
   background: linear-gradient(to bottom right, #f4f8ff, #eaf1fb);
   color: #333;
   line-height: 1.6;
-  padding-top: 100px; /* slightly smaller for better fit */
+  padding-top: 90px; /* better fit for a smaller header */
 }
 
 /* ======= HEADER WITH LOGO AND NAV ======= */
 .site-header {
   background-color: #244b8f;
-  padding: 10px 40px;
+  padding: 10px 30px;  /* Slimmer header */
   position: fixed;
   top: 0;
   width: 100%;
@@ -35,9 +35,9 @@ body {
 
 /* Logo Adjustments */
 .logo img {
-  height: 60px; /* smaller, more balanced */
+  height: 45px; /* refined for Sable Systems-like size */
   margin-right: 20px;
-  max-width: 200px; /* cap max width */
+  max-width: 150px;
   width: auto;
 }
 
@@ -133,7 +133,7 @@ button:hover {
   }
 
   .logo img {
-    height: 50px;
+    height: 40px; /* smaller for mobile */
     margin-bottom: 10px;
   }
 
