@@ -1,23 +1,23 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* GLOBAL */
 body {
+  margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(to bottom right, #f4f8ff, #eaf1fb);
-  color: #333;
-  line-height: 1.6;
-  padding-top: 100px; /* Adjusted for taller header */
+  background-color: #ffffff;
+  padding-top: 100px;
 }
 
-/* ======= HEADER WITH LOGO AND NAV ======= */
+/* Announcement */
+.top-announcement {
+  background-color: #16366e;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Header */
 .site-header {
   background-color: #244b8f;
-  padding: 5px 30px;
+  padding: 15px 40px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -27,8 +27,8 @@ body {
 
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -37,155 +37,36 @@ body {
   height: 50px;
 }
 
-/* NAVIGATION */
-.main-nav ul {
-  display: flex;
+/* Navigation */
+.nav-links {
   list-style: none;
-  gap: 25px;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.main-nav ul li a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
-  padding: 8px 0;
-  transition: color 0.3s, border-bottom 0.3s;
-  border-bottom: 3px solid transparent;
-}
-
-.main-nav ul li a:hover {
-  color: #ffffff;
-  border-bottom: 3px solid #ffe36f; /* Highlight underline */
-}
-
-/* OPTIONAL TOP ANNOUNCEMENT */
-.top-announcement {
-  background-color: #16366e;
-  color: #ffffff;
-  text-align: center;
-  padding: 6px;
-  font-size: 0.85em;
-}
-
-/* FULL WIDTH CONTENT CONTAINERS */
-.about-container, .players-container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px 40px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  line-height: 1.8;
   font-size: 16px;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
 }
 
-/* LOGIN CONTAINER */
-.login-container {
-  background-color: white;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  max-width: 350px;
-  margin: 0 auto;
+.nav-links a:hover {
+  border-bottom: 3px solid #ffe36f;
+}
+
+/* Hero Section */
+.hero-container {
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
 }
 
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-/* FORM ELEMENTS */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
-
-input, select {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 16px;
-  background-color: #244b8f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #1b3a70;
-}
-
-/* ERROR MESSAGE STYLING */
-.error-message {
-  margin-top: 15px;
-  color: red;
-  font-weight: 500;
-}
-
-/* MOBILE RESPONSIVE ADJUSTMENTS */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .logo img {
-    height: 40px;
-    margin-bottom: 5px;
-  }
-
-  .login-container, .about-container, .players-container {
-    width: 90%;
-    padding: 25px;
-  }
-
-  .players-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .player-card {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .player-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-
-  .player-card h3, .player-card p {
-    margin: 5px 0;
-  }
+.hero-logo {
+  max-width: 300px;
+  width: 100%;
 }
