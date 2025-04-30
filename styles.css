@@ -1,56 +1,63 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #ffffff;
-  padding-top: 100px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Announcement */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  padding-top: 130px; /* enough space for top + nav bars */
+}
+
+/* Announcement Bar */
 .top-announcement {
   background-color: #16366e;
   color: white;
+  padding: 8px 20px;
   text-align: center;
-  padding: 8px;
   font-size: 14px;
-}
-
-/* Header */
-.site-header {
-  background-color: #244b8f;
-  padding: 15px 40px;
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 1000;
+  z-index: 1001;
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Navigation Bar */
+.site-header {
+  background-color: #244b8f;
+  position: fixed;
+  top: 36px; /* directly below announcement */
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo img {
-  height: 50px;
+.nav-logo img {
+  height: 48px;
 }
 
-/* Navigation */
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 30px;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
+  padding-bottom: 4px;
   border-bottom: 3px solid transparent;
   transition: 0.3s;
 }
@@ -59,14 +66,14 @@ body {
   border-bottom: 3px solid #ffe36f;
 }
 
-/* Hero Section */
-.hero-container {
+/* Hero Image */
+.hero {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-.hero-logo {
+.hero img {
   max-width: 300px;
   width: 100%;
 }
