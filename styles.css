@@ -11,13 +11,13 @@ body {
   background: linear-gradient(to bottom right, #f4f8ff, #eaf1fb);
   color: #333;
   line-height: 1.6;
-  padding-top: 90px; /* adjust for header */
+  padding-top: 100px; /* Adjusted for taller header */
 }
 
 /* ======= HEADER WITH LOGO AND NAV ======= */
 .site-header {
   background-color: #244b8f;
-  padding: 10px 30px;
+  padding: 5px 30px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,33 +34,42 @@ body {
 }
 
 .logo img {
-  height: 45px;
-  margin-right: 20px;
-  max-width: 150px;
-  width: auto;
+  height: 50px;
 }
 
 /* NAVIGATION */
 .main-nav ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 25px;
 }
 
 .main-nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s;
+  font-size: 15px;
+  padding: 8px 0;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 3px solid transparent;
 }
 
 .main-nav ul li a:hover {
-  color: #ffe36f;
+  color: #ffffff;
+  border-bottom: 3px solid #ffe36f; /* Highlight underline */
+}
+
+/* OPTIONAL TOP ANNOUNCEMENT */
+.top-announcement {
+  background-color: #16366e;
+  color: #ffffff;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.85em;
 }
 
 /* FULL WIDTH CONTENT CONTAINERS */
-.about-container {
+.about-container, .players-container {
   max-width: 1000px;
   margin: 40px auto;
   padding: 20px 40px;
@@ -69,20 +78,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   line-height: 1.8;
   font-size: 16px;
-}
-
-.about-container h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.about-container ul {
-  margin: 15px 0;
-  padding-left: 20px;
-}
-
-.about-container li {
-  margin-bottom: 8px;
 }
 
 /* LOGIN CONTAINER */
@@ -102,7 +97,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* FORM */
+/* FORM ELEMENTS */
 form {
   display: flex;
   flex-direction: column;
@@ -137,52 +132,44 @@ button:hover {
   background-color: #1b3a70;
 }
 
-/* FEEDBACK */
+/* ERROR MESSAGE STYLING */
 .error-message {
   margin-top: 15px;
   color: red;
   font-weight: 500;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .main-nav ul {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     margin-top: 10px;
   }
 
   .logo img {
     height: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
-  .login-container, .about-container {
+  .login-container, .about-container, .players-container {
     width: 90%;
     padding: 25px;
   }
-  .players-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px 40px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    text-align: center;
-  }
-  
+
   .players-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
   }
-  
+
   .player-card {
     background-color: #f9f9f9;
     border-radius: 12px;
@@ -190,20 +177,15 @@ button:hover {
     width: 250px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .player-card img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
   }
-  
-  .player-card h3 {
-    margin-bottom: 5px;
-  }
-  
-  .player-card p {
+
+  .player-card h3, .player-card p {
     margin: 5px 0;
   }
-  
 }
