@@ -15,7 +15,7 @@ body {
   padding-top: 100px;
 }
 
-/* ======= HEADER BAR ======= */
+/* HEADER */
 .site-header {
   background-color: #244b8f;
   height: 80px;
@@ -47,6 +47,8 @@ body {
   list-style: none;
   gap: 25px;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav ul li a {
@@ -54,6 +56,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
+  padding: 8px 0;
   transition: color 0.3s, border-bottom 0.3s;
   border-bottom: 3px solid transparent;
 }
@@ -63,86 +66,126 @@ body {
   border-bottom: 3px solid #ffe36f;
 }
 
-/* ======= HERO SECTION ======= */
-.hero-section {
+/* CONTENT CONTAINER */
+.content-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* LOGIN PAGE */
+.login-container {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.login-container h2 {
   text-align: center;
-  padding: 100px 20px 60px;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-section h1 {
-  font-size: 3em;
   margin-bottom: 20px;
-}
-
-.hero-section p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-section a.cta-button {
-  background-color: #ffe36f;
+  letter-spacing: 1px;
   color: #244b8f;
-  padding: 12px 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
   font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #244b8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
   transition: background-color 0.3s;
 }
 
-.hero-section a.cta-button:hover {
-  background-color: #f7d940;
+button:hover {
+  background-color: #1b3a70;
 }
 
-/* ======= FEATURES SECTION ======= */
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 12px;
-  width: 250px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.feature h3 {
-  margin-bottom: 10px;
-  color: #244b8f;
-}
-
-/* ======= RESPONSIVE ======= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .site-header {
     flex-direction: column;
     height: auto;
-    padding: 10px 0;
+    padding: 10px 20px;
   }
 
   .main-nav ul {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    margin-top: 10px;
   }
 
-  .hero-section h1 {
-    font-size: 2em;
+  .logo img {
+    height: 60px;
+    margin-bottom: 5px;
   }
 
-  .features {
-    flex-direction: column;
-    align-items: center;
+  .login-container,
+  .content-container {
+    width: 90%;
+    padding: 25px;
   }
+}
+
+/* FEATURE CARDS (for Home) */
+.feature-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #244b8f;
 }
