@@ -120,8 +120,8 @@ body {
 }
 
 .feature img {
-  height: 40px;
-  width: 40px;
+  height: 16px;
+  width: 16px;
   object-fit: contain;
   margin-bottom: 10px;
 }
