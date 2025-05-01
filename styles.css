@@ -17,7 +17,7 @@ body {
 /* ======= HEADER WITH LOGO AND NAV ======= */
 .site-header {
   background-color: #244b8f;
-  padding: 10px 30px;
+  padding: 20px 100px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,7 +34,7 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 100px;
 }
 
 /* NAVIGATION */
