@@ -29,18 +29,15 @@ body {
   left: 0;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 30px;
 }
 
@@ -71,28 +68,88 @@ body {
   border-bottom: 3px solid #ffe36f;
 }
 
-/* LANGUAGE SELECTOR IN NAV */
-.language-selector-nav {
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 120px 20px 40px;
+  background-color: rgba(255, 255, 255, 0.75);
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  color: #244b8f;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ffe36f;
+  color: #244b8f;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ffcc00;
+}
+
+/* FEATURES */
+.features {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 20px;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
 }
 
-.language-selector-nav label {
-  font-size: 18px;
-  color: white;
+.feature {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
 }
 
-.language-selector-nav select {
-  padding: 4px 8px;
-  border-radius: 6px;
-  border: none;
-  font-size: 14px;
-  margin-left: 4px;
+.feature img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
-/* ======= LOGIN + REGISTER ======= */
+.feature h3 {
+  color: #244b8f;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.feature p {
+  font-size: 0.95em;
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* ======= LOGIN + REGISTER PAGES ======= */
 .login-container {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 30px 40px;
@@ -178,11 +235,17 @@ form p {
     margin-top: 10px;
   }
 
-  .language-selector-nav {
-    margin-top: 10px;
-  }
-
   .hero {
     padding: 100px 20px 30px;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature img {
+    height: 30px;
+    width: 30px;
   }
 }
