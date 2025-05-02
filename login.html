@@ -8,26 +8,26 @@
 </head>
 <body>
 
-<div class="header-container">
-  <div class="logo">
-    <a href="index.html">
-      <img src="logo.png" alt="OcuNeurologix Logo">
-    </a>
-  </div>
-  <nav class="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="instructions.html">Instructions</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
-
-</div>
-
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="OcuNeurologix Logo">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="instructions.html">Instructions</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- ✅ Styled login box -->
+  <!-- Login Card -->
   <div class="login-container">
     <h2>Login</h2>
     <form id="loginForm">
@@ -45,13 +45,12 @@
         <option value="parent">Parent</option>
       </select>
 
-      <label style="margin-top: 10px;">
+      <label>
         <input type="checkbox" id="rememberMe"> Remember Me
       </label>
 
       <button type="submit">Login</button>
       <p id="error-msg" class="error-message"></p>
-
       <p>Don't have an account? <a href="register.html">Sign up here</a></p>
     </form>
   </div>
