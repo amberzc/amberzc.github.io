@@ -42,9 +42,13 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 65px;          /* ✅ Bigger but within 80px header */
   width: auto;
   display: block;
+  margin-top: 4px;        /* Optional: fine-tune vertical alignment */
+  margin-bottom: 4px;
+}
+
 }
 
 /* NAVIGATION */
