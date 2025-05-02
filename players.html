@@ -8,6 +8,13 @@
 </head>
 <body>
 
+  <!-- 🔐 Redirect if not logged in -->
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
   <!-- Header with Logo and Nav -->
   <header class="site-header">
     <div class="header-container">
@@ -22,7 +29,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="instructions.html">Instructions</a></li>
           <li><a href="players.html">Players</a></li>
-           <li><a href="login.html">Login</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -30,6 +37,7 @@
 
   <!-- Player Profiles Section -->
   <div class="players-container">
+    <!-- 🔊 Greeting injected by JavaScript -->
     <h2>Our Players</h2>
     <div class="players-grid">
       <!-- Player Card 1 -->
@@ -47,10 +55,40 @@
         <p>Position: Goalkeeper</p>
         <p>Stats: 30 Saves, 5 Clean Sheets</p>
       </div>
-
-      <!-- Add more player cards here -->
     </div>
   </div>
+
+  <!-- 🧠 Add Greeting and Logout Button -->
+  <script>
+    const greeting = document.createElement("p");
+    greeting.textContent = "Welcome Coaches and Athletes!";
+    greeting.style.fontWeight = "bold";
+    greeting.style.fontSize = "1.5em";
+    greeting.style.textAlign = "center";
+    greeting.style.marginTop = "20px";
+    greeting.style.backgroundColor = "#004080";
+    greeting.style.color = "white";
+    greeting.style.padding = "10px";
+    greeting.style.borderRadius = "8px";
+
+    document.querySelector(".players-container").prepend(greeting);
+
+    const logoutBtn = document.createElement("button");
+    logoutBtn.textContent = "Logout";
+    logoutBtn.style.margin = "20px auto";
+    logoutBtn.style.display = "block";
+    logoutBtn.style.padding = "10px 20px";
+    logoutBtn.style.backgroundColor = "#800000";
+    logoutBtn.style.color = "white";
+    logoutBtn.style.border = "none";
+    logoutBtn.style.borderRadius = "5px";
+    logoutBtn.onclick = () => {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    };
+
+    document.body.appendChild(logoutBtn);
+  </script>
 
 </body>
 </html>
