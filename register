@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h2>Register New Account</h2>
+  <form>
+    <label for="reg-email">Email:</label>
+    <input type="email" id="reg-email" name="reg-email" required>
+
+    <label for="reg-password">Password:</label>
+    <input type="password" id="reg-password" name="reg-password" required>
+
+    <label for="reg-role">User Type:</label>
+    <select id="reg-role" name="reg-role">
+      <option value="coach">Coach</option>
+      <option value="athlete">Athlete</option>
+      <option value="trainer">Athletic Trainer</option>
+      <option value="parent">Parent</option>
+    </select>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p>Already have an account? <a href="login.html">Login here</a></p>
+
+</body>
+</html>
