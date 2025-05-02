@@ -46,8 +46,7 @@ body {
   width: auto;
   display: block;
   object-fit: contain;
-  padding: 4px 0;         /* Optional: helps with vertical centering */
-}
+  padding: 4px 0;         /* Optional: helps with vertical centering *
 
 }
 
