@@ -1,45 +1,54 @@
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const userType = document.getElementById("userType").value;
-  const rememberMe = document.getElementById("rememberMe").checked;
+// Attach login logic
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("loginForm");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const userTypeInput = document.getElementById("userType");
+  const rememberMeInput = document.getElementById("rememberMe");
   const errorMsg = document.getElementById("error-msg");
 
-  // Dummy credentials for demo
-  const validEmail = "test@example.com";
-  const validPassword = "1234";
-
-  if (email === validEmail && password === validPassword) {
-    errorMsg.style.color = "green";
-    errorMsg.textContent = "Login successful! Redirecting...";
-
-    // Store login state and role
-    localStorage.setItem("loggedIn", "true");
-    localStorage.setItem("userType", userType);
-
-    // Save email if "Remember Me" checked
-    if (rememberMe) {
-      localStorage.setItem("rememberEmail", email);
-    } else {
-      localStorage.removeItem("rememberEmail");
-    }
-
-    setTimeout(() => {
-      window.location.href = "players.html";
-    }, 1000);
-  } else {
-    errorMsg.style.color = "red";
-    errorMsg.textContent = "Invalid email or password.";
-  }
-});
-
-// Autofill remembered email on load
-window.addEventListener("DOMContentLoaded", function () {
+  // Autofill remembered email
   const savedEmail = localStorage.getItem("rememberEmail");
   if (savedEmail) {
-    document.getElementById("email").value = savedEmail;
-    document.getElementById("rememberMe").checked = true;
+    emailInput.value = savedEmail;
+    rememberMeInput.checked = true;
   }
+
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const userType = userTypeInput.value;
+    const rememberMe = rememberMeInput.checked;
+
+    // ✅ Demo login credentials
+    const validEmail = "test@example.com";
+    const validPassword = "1234";
+
+    if (email === validEmail && password === validPassword) {
+      // Show message
+      errorMsg.style.color = "green";
+      errorMsg.textContent = "Login successful! Redirecting...";
+
+      // Store login and role info
+      localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("userType", userType);
+
+      // Remember email if checked
+      if (rememberMe) {
+        localStorage.setItem("rememberEmail", email);
+      } else {
+        localStorage.removeItem("rememberEmail");
+      }
+
+      // Redirect after short delay
+      setTimeout(() => {
+        window.location.href = "players.html";
+      }, 1000);
+    } else {
+      errorMsg.style.color = "red";
+      errorMsg.textContent = "Invalid email or password.";
+    }
+  });
 });
