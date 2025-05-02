@@ -28,7 +28,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="instructions.html">Instructions</a></li>
-          <li><a href="players.html">Players</a></li>
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
@@ -37,7 +36,6 @@
 
   <!-- Player Profiles Section -->
   <div class="players-container">
-    <!-- 🔊 Greeting injected by JavaScript -->
     <h2>Our Players</h2>
     <div class="players-grid">
       <!-- Player Card 1 -->
@@ -58,10 +56,31 @@
     </div>
   </div>
 
-  <!-- 🧠 Add Greeting and Logout Button -->
+  <!-- 🧠 Greeting + Logout Script -->
   <script>
+    // 🎯 Get user type from login
+    const userType = localStorage.getItem("userType");
+
+    // 🧠 Generate greeting based on role
+    let greetingText = "Welcome!";
+    switch (userType) {
+      case "coach":
+        greetingText = "Welcome Coach!";
+        break;
+      case "athlete":
+        greetingText = "Welcome Athlete!";
+        break;
+      case "trainer":
+        greetingText = "Welcome Athletic Trainer!";
+        break;
+      case "parent":
+        greetingText = "Welcome Parent!";
+        break;
+    }
+
+    // 👋 Create and style greeting
     const greeting = document.createElement("p");
-    greeting.textContent = "Welcome Coaches and Athletes!";
+    greeting.textContent = greetingText;
     greeting.style.fontWeight = "bold";
     greeting.style.fontSize = "1.5em";
     greeting.style.textAlign = "center";
@@ -71,8 +90,10 @@
     greeting.style.padding = "10px";
     greeting.style.borderRadius = "8px";
 
+    // ⬆️ Insert into the page
     document.querySelector(".players-container").prepend(greeting);
 
+    // 🔓 Add Logout Button
     const logoutBtn = document.createElement("button");
     logoutBtn.textContent = "Logout";
     logoutBtn.style.margin = "20px auto";
@@ -84,52 +105,13 @@
     logoutBtn.style.borderRadius = "5px";
     logoutBtn.onclick = () => {
       localStorage.removeItem("loggedIn");
+      localStorage.removeItem("userType");
+      localStorage.removeItem("rememberEmail");
       window.location.href = "login.html";
     };
 
     document.body.appendChild(logoutBtn);
   </script>
-<script>
-  // 🔒 Protect page from direct access
-  if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-
-  // 🎯 Get user type from login
-  const userType = localStorage.getItem("userType");
-
-  // 🧠 Generate greeting based on role
-  let greetingText = "Welcome!";
-  switch (userType) {
-    case "coach":
-      greetingText = "Welcome Coach!";
-      break;
-    case "athlete":
-      greetingText = "Welcome Athlete!";
-      break;
-    case "trainer":
-      greetingText = "Welcome Athletic Trainer!";
-      break;
-    case "parent":
-      greetingText = "Welcome Parent!";
-      break;
-  }
-
-  // 👋 Create and style greeting
-  const greeting = document.createElement("p");
-  greeting.textContent = greetingText;
-  greeting.style.fontWeight = "bold";
-  greeting.style.fontSize = "1.5em";
-  greeting.style.textAlign = "center";
-  greeting.style.marginTop = "20px";
-  greeting.style.backgroundColor = "#004080";
-  greeting.style.color = "white";
-  greeting.style.padding = "10px";
-  greeting.style.borderRadius = "8px";
-
-  // ⬆️ Insert into the page
-  document.querySelector(".players-container").prepend(greeting);
-</script>
 
 </body>
 </html>
