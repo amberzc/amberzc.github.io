@@ -10,7 +10,15 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
   if (email === validEmail && password === validPassword) {
     errorMsg.style.color = "green";
-    errorMsg.textContent = "Login successful!";
+    errorMsg.textContent = "Login successful! Redirecting...";
+
+    // ✅ Save login flag
+    localStorage.setItem("loggedIn", "true");
+
+    // ✅ Redirect to players.html after a short delay
+    setTimeout(() => {
+      window.location.href = "players.html";
+    }, 1000); // 1 second delay to show message
 
   } else {
     errorMsg.style.color = "red";
