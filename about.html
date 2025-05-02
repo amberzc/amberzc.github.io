@@ -8,20 +8,25 @@
 </head>
 <body>
 
-  <!-- Header with Logo and Nav -->
-  <header class="site-header">
-    <div class="header-container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo.png" alt="OcuNeurologix Logo">
-        </a>
-      </div>
+     <!-- Nav + Language in one flex row -->
       <nav class="main-nav">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="instructions.html">Instructions</a></li>
           <li><a href="login.html">Login</a></li>
+          <li>
+            <div class="language-selector-nav">
+              <label for="languageSelect">🌐</label>
+              <select id="languageSelect" name="languageSelect">
+                <option value="us-en">United States / English</option>
+                <option value="us-es">United States / Spanish</option>
+                <option value="fr-fr">France / Français</option>
+                <option value="de-de">Germany / Deutsch</option>
+                <option value="jp-ja">Japan / 日本語</option>
+              </select>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
