@@ -145,7 +145,7 @@ body {
   font-size: 0.9em;
 }
 
-/* LOGIN PAGE */
+/* ======= LOGIN + REGISTER ======= */
 .login-container {
   background-color: white;
   padding: 30px 40px;
@@ -181,7 +181,11 @@ select {
   margin-bottom: 10px;
 }
 
-button {
+input[type="checkbox"] {
+  width: auto;
+}
+
+button[type="submit"] {
   margin-top: 15px;
   padding: 12px;
   font-size: 16px;
@@ -195,11 +199,23 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+button[type="submit"]:hover {
   background-color: #1b3a70;
 }
 
-/* RESPONSIVE */
+#error-msg {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+form p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ======= RESPONSIVE ======= */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
