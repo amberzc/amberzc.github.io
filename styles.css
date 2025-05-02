@@ -47,8 +47,10 @@ body {
   display: block;
 }
 
+/* NAVIGATION */
 .main-nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 25px;
   margin: 0;
@@ -67,24 +69,28 @@ body {
 .main-nav ul li a:hover {
   border-bottom: 3px solid #ffe36f;
 }
+
+/* LANGUAGE DROPDOWN (INLINE) */
 .language-selector-nav {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-left: 20px;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #244b8f;
 }
 
 .language-selector-nav label {
-  font-size: 18px;
-  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  color: #244b8f;
 }
 
 .language-selector-nav select {
-  padding: 6px 10px;
   font-size: 14px;
-  border-radius: 6px;
   border: none;
-  background-color: white;
+  background: none;
   color: #244b8f;
   font-weight: bold;
   cursor: pointer;
@@ -308,5 +314,10 @@ form p {
   .content-container {
     padding: 20px;
     margin: 30px 15px;
+  }
+
+  .language-selector-nav {
+    margin-top: 10px;
+    justify-content: center;
   }
 }
