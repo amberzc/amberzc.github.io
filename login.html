@@ -27,27 +27,34 @@
     </div>
   </header>
 
-<form id="loginForm">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
+  <!-- Login Form -->
+  <form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
 
-  <label for="userType">User Type:</label>
-  <select id="userType" name="userType">
-    <option value="coach">Coach</option>
-    <option value="athlete">Athlete</option>
-    <option value="trainer">Athletic Trainer</option>
-    <option value="parent">Parent</option>
-  </select>
+    <label for="userType">User Type:</label>
+    <select id="userType" name="userType">
+      <option value="coach">Coach</option>
+      <option value="athlete">Athlete</option>
+      <option value="trainer">Athletic Trainer</option>
+      <option value="parent">Parent</option>
+    </select>
 
-  <label>
-    <input type="checkbox" id="rememberMe"> Remember Me
-  </label>
+    <label>
+      <input type="checkbox" id="rememberMe"> Remember Me
+    </label>
 
-  <button type="submit">Login</button>
-  <p id="error-msg" class="error-message"></p>
+    <button type="submit">Login</button>
+    <p id="error-msg" class="error-message"></p>
 
-  <p>Don't have an account? <a href="register.html">Sign up here</a></p>
-</form>
+    <p>Don't have an account? <a href="register.html">Sign up here</a></p>
+  </form>
+
+  <!-- ✅ This is the important part -->
+  <script src="script.js"></script>
+
+</body>
+</html>
