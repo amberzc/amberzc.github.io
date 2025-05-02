@@ -42,10 +42,11 @@ body {
 }
 
 .logo img {
-  max-height: 70px;          /* ✅ Bigger but within 80px header */
+  max-height: 68px;      /* ✅ Fits safely in 80px header */
   width: auto;
   display: block;
-object-fit: contain;
+  object-fit: contain;
+  padding: 4px 0;         /* Optional: helps with vertical centering */
 }
 
 }
