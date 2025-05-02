@@ -67,6 +67,28 @@ body {
 .main-nav ul li a:hover {
   border-bottom: 3px solid #ffe36f;
 }
+.language-selector-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 20px;
+}
+
+.language-selector-nav label {
+  font-size: 18px;
+  color: white;
+}
+
+.language-selector-nav select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: white;
+  color: #244b8f;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /* HERO SECTION */
 .hero {
