@@ -180,6 +180,77 @@ body {
   margin-top: 40px;
   font-size: 0.9em;
 }
+/* ======= LOGIN + REGISTER PAGES ======= */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #244b8f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #244b8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #1b3a70;
+}
+
+#error-msg {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+form p {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* ======= GENERAL PAGE CONTENT ======= */
 .content-container {
