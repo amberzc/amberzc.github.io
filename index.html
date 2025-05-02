@@ -8,34 +8,39 @@
 </head>
 <body>
 
- <div class="header-container">
-  <div class="logo">
-    <a href="index.html">
-      <img src="logo.png" alt="OcuNeurologix Logo">
-    </a>
-  </div>
+  <!-- ✅ FIX: wrap the header properly -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="OcuNeurologix Logo">
+        </a>
+      </div>
 
-  <nav class="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="instructions.html">Instructions</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+      <div class="header-right">
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="instructions.html">Instructions</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
 
-  <!-- 🌐 Language dropdown -->
-  <div class="language-selector-nav">
-    <label for="languageSelect" class="globe-icon">🌐</label>
-    <select id="languageSelect" name="languageSelect">
-      <option value="us-en">United States / English</option>
-      <option value="us-es">United States / Spanish</option>
-      <option value="fr-fr">France / Français</option>
-      <option value="de-de">Germany / Deutsch</option>
-      <option value="jp-ja">Japan / 日本語</option>
-    </select>
-  </div>
-</div>
+        <!-- 🌐 Language dropdown -->
+        <div class="language-selector-nav">
+          <label for="languageSelect" class="globe-icon">🌐</label>
+          <select id="languageSelect" name="languageSelect">
+            <option value="us-en">United States / English</option>
+            <option value="us-es">United States / Spanish</option>
+            <option value="fr-fr">France / Français</option>
+            <option value="de-de">Germany / Deutsch</option>
+            <option value="jp-ja">Japan / 日本語</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
 
 
   <!-- Hero Section -->
