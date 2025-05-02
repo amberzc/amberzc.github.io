@@ -89,6 +89,47 @@
 
     document.body.appendChild(logoutBtn);
   </script>
+<script>
+  // 🔒 Protect page from direct access
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+
+  // 🎯 Get user type from login
+  const userType = localStorage.getItem("userType");
+
+  // 🧠 Generate greeting based on role
+  let greetingText = "Welcome!";
+  switch (userType) {
+    case "coach":
+      greetingText = "Welcome Coach!";
+      break;
+    case "athlete":
+      greetingText = "Welcome Athlete!";
+      break;
+    case "trainer":
+      greetingText = "Welcome Athletic Trainer!";
+      break;
+    case "parent":
+      greetingText = "Welcome Parent!";
+      break;
+  }
+
+  // 👋 Create and style greeting
+  const greeting = document.createElement("p");
+  greeting.textContent = greetingText;
+  greeting.style.fontWeight = "bold";
+  greeting.style.fontSize = "1.5em";
+  greeting.style.textAlign = "center";
+  greeting.style.marginTop = "20px";
+  greeting.style.backgroundColor = "#004080";
+  greeting.style.color = "white";
+  greeting.style.padding = "10px";
+  greeting.style.borderRadius = "8px";
+
+  // ⬆️ Insert into the page
+  document.querySelector(".players-container").prepend(greeting);
+</script>
 
 </body>
 </html>
