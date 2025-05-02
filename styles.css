@@ -40,6 +40,24 @@ body {
   justify-content: space-between;
   padding: 0 30px;
 }
+.language-selector-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 20px;
+}
+
+.language-selector-nav label {
+  font-size: 18px;
+  color: white;
+}
+
+.language-selector-nav select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
 
 .logo img {
   height: 50px;
