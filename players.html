@@ -1,44 +1,89 @@
-<div class="roster-container">
-  <h2>Player Roster & Health History</h2>
-  <table class="roster-table">
-    <thead>
-      <tr>
-        <th>Player</th>
-        <th>Age</th>
-        <th>Position</th>
-        <th>Concussion History</th>
-        <th>Injuries</th>
-        <th>Last Updated</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <div class="player-info">
-            <img src="alex.jpg" alt="Alex Carter" class="player-photo">
-            Alex Carter
-          </div>
-        </td>
-        <td>17</td>
-        <td>Midfielder</td>
-        <td>Yes (2 total)</td>
-        <td>Left ankle sprain (2024), Concussion (2023)</td>
-        <td>April 2025</td>
-      </tr>
-      <tr>
-        <td>
-          <div class="player-info">
-            <img src="samantha.jpg" alt="Samantha Lee" class="player-photo">
-            Samantha Lee
-          </div>
-        </td>
-        <td>16</td>
-        <td>Goalkeeper</td>
-        <td>No</td>
-        <td>None</td>
-        <td>April 2025</td>
-      </tr>
-      <!-- Add more players as needed -->
-    </tbody>
-  </table>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player Roster</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Blue Header Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="OcuNeurologix Logo">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="instructions.html">Instructions</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li>
+            <div class="language-selector-nav">
+              <label for="languageSelect">🌐</label>
+              <select id="languageSelect" name="languageSelect">
+                <option value="us-en">United States / English</option>
+                <option value="us-es">United States / Spanish</option>
+                <option value="fr-fr">France / Français</option>
+                <option value="de-de">Germany / Deutsch</option>
+                <option value="jp-ja">Japan / 日本語</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Player Roster Section -->
+  <div class="roster-container">
+    <h2>Player Roster & Health History</h2>
+    <table class="roster-table">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Age</th>
+          <th>Position</th>
+          <th>Concussion History</th>
+          <th>Injuries</th>
+          <th>Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="player-info">
+              <img src="alex.jpg" alt="Alex Carter" class="player-photo">
+              Alex Carter
+            </div>
+          </td>
+          <td>17</td>
+          <td>Midfielder</td>
+          <td>Yes (2 total)</td>
+          <td>Left ankle sprain (2024), Concussion (2023)</td>
+          <td>April 2025</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="player-info">
+              <img src="samantha.jpg" alt="Samantha Lee" class="player-photo">
+              Samantha Lee
+            </div>
+          </td>
+          <td>16</td>
+          <td>Goalkeeper</td>
+          <td>No</td>
+          <td>None</td>
+          <td>April 2025</td>
+        </tr>
+        <!-- Add more players as needed -->
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
