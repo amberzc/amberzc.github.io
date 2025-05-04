@@ -2,13 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Player Roster</title>
+  <title>Varsity Roster Upload</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .upload-section {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .lineup-section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .lineup-section h3 {
+      color: #244b8f;
+      text-align: left;
+    }
+    .lineup-section ul {
+      list-style: disc;
+      padding-left: 20px;
+      text-align: left;
+    }
+    .roster-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .roster-table th, .roster-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .roster-table th {
+      background-color: #244b8f;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Blue Header Bar -->
   <header class="site-header">
     <div class="header-container">
       <div class="logo">
@@ -22,68 +63,85 @@
           <li><a href="about.html">About</a></li>
           <li><a href="instructions.html">Instructions</a></li>
           <li><a href="login.html">Login</a></li>
-          <li>
-            <div class="language-selector-nav">
-              <label for="languageSelect">🌐</label>
-              <select id="languageSelect" name="languageSelect">
-                <option value="us-en">United States / English</option>
-                <option value="us-es">United States / Spanish</option>
-                <option value="fr-fr">France / Français</option>
-                <option value="de-de">Germany / Deutsch</option>
-                <option value="jp-ja">Japan / 日本語</option>
-              </select>
-            </div>
-          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Player Roster Section -->
-  <div class="roster-container">
-    <h2>Player Roster & Health History</h2>
-    <table class="roster-table">
-      <thead>
-        <tr>
-          <th>Player</th>
-          <th>Age</th>
-          <th>Position</th>
-          <th>Concussion History</th>
-          <th>Injuries</th>
-          <th>Last Updated</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="player-info">
-              <img src="alex.png" alt="Alex Carter" class="player-photo">
-              Alex Carter
-            </div>
-          </td>
-          <td>17</td>
-          <td>Midfielder</td>
-          <td>Yes (2 total)</td>
-          <td>Left ankle sprain (2024), Concussion (2023)</td>
-          <td>April 2025</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="player-info">
-              <img src="samantha.jpg" alt="Samantha Lee" class="player-photo">
-              Samantha Lee
-            </div>
-          </td>
-          <td>16</td>
-          <td>Goalkeeper</td>
-          <td>No</td>
-          <td>None</td>
-          <td>April 2025</td>
-        </tr>
-        <!-- Add more players as needed -->
-      </tbody>
-    </table>
+  <div class="upload-section">
+    <h2>Upload Varsity Soccer Roster (.csv)</h2>
+    <input type="file" id="csvFile" accept=".csv">
+    <button onclick="parseCSV()">Generate Roster</button>
+    <div id="output"></div>
+    <div id="lineup"></div>
   </div>
 
+  <script>
+    function parseCSV() {
+      const fileInput = document.getElementById('csvFile');
+      const output = document.getElementById('output');
+      const lineup = document.getElementById('lineup');
+      const file = fileInput.files[0];
+      if (!file) return alert('Please select a CSV file.');
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const lines = e.target.result.split('\n').filter(line => line.trim());
+        const headers = lines[0].split(',');
+        const players = [];
+
+        // Parse rows into player objects
+        for (let i = 1; i < lines.length; i++) {
+          const row = lines[i].split(',');
+          if (row.length !== headers.length) continue;
+          const player = {};
+          headers.forEach((header, j) => {
+            player[header.trim()] = row[j].trim();
+          });
+          players.push(player);
+        }
+
+        // Build Roster Table
+        const table = document.createElement('table');
+        table.classList.add('roster-table');
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        headers.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h.trim();
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+        const tbody = document.createElement('tbody');
+        players.forEach(player => {
+          const tr = document.createElement('tr');
+          headers.forEach(h => {
+            const td = document.createElement('td');
+            td.textContent = player[h.trim()];
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        output.innerHTML = '<h3>Varsity Roster</h3>';
+        output.appendChild(table);
+
+        // Group by Position
+        const positions = ['Goalkeeper', 'Defender', 'Midfielder', 'Forward'];
+        let groupedHTML = '';
+        positions.forEach(pos => {
+          const group = players.filter(p => p.Position.toLowerCase() === pos.toLowerCase());
+          if (group.length > 0) {
+            groupedHTML += `<div class="lineup-section"><h3>${pos}s</h3><ul>`;
+            group.forEach(p => groupedHTML += `<li>${p.Name}</li>`);
+            groupedHTML += '</ul></div>';
+          }
+        });
+        lineup.innerHTML = `<h2>Starting Lineup</h2>${groupedHTML}`;
+      };
+      reader.readAsText(file);
+    }
+  </script>
 </body>
 </html>
