@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Example valid credentials — replace with real ones for production
     const validEmail = "test@example.com";
-    const validPassword = "1234";
+    const validPassword = "Ocuscope1234";
 
     // Validate login
     if (email === validEmail && password === validPassword) {
