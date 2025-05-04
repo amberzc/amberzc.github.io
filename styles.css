@@ -121,6 +121,7 @@ body {
   margin-bottom: 20px;
 }
 
+
 .cta-button {
   display: inline-block;
   background-color: #ffe36f;
@@ -329,3 +330,56 @@ form p {
     margin: 30px 15px;
   }
 }
+/* ======= PLAYER ROSTER ======= */
+.roster-container {
+  margin: 60px auto;
+  padding: 20px;
+  width: 95%;
+  max-width: 1000px;
+  background-color: #ffffffdd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.roster-container h2 {
+  text-align: center;
+  color: #244b8f;
+  margin-bottom: 20px;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.roster-table th,
+.roster-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.roster-table th {
+  background-color: #244b8f;
+  color: white;
+  text-align: left;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
